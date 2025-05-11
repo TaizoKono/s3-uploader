@@ -1,0 +1,312 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: 20px;
+}
+
+/* タブ */
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab-btn {
+  background-color: transparent;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-bottom: 2px solid transparent;
+  color: #666;
+}
+
+.tab-btn:hover {
+  color: #4285f4;
+}
+
+.tab-btn.active {
+  color: #4285f4;
+  border-bottom: 2px solid #4285f4;
+  font-weight: bold;
+}
+
+/* ファイル入力 */
+.file-input {
+  margin: 20px 0;
+}
+
+input[type="file"] {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+}
+
+/* ボタン */
+.btn {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 10px;
+}
+
+.btn:hover {
+  background-color: #3367d6;
+}
+
+.btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.btn-download {
+  background-color: #4caf50;
+}
+
+.btn-download:hover {
+  background-color: #388e3c;
+}
+
+.btn-delete {
+  background-color: #f44336;
+}
+
+.btn-delete:hover {
+  background-color: #d32f2f;
+}
+
+.refresh-btn {
+  margin-bottom: 20px;
+}
+
+/* プログレスバー */
+.progress-container {
+  width: 100%;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 24px;
+  background-color: #4caf50;
+  text-align: center;
+  line-height: 24px;
+  color: white;
+  font-weight: bold;
+  transition: width 0.3s ease;
+}
+
+/* メッセージ */
+.error {
+  color: #d32f2f;
+  background-color: #ffebee;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+.success {
+  color: #388e3c;
+  background-color: #e8f5e9;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+.success p {
+  margin: 5px 0;
+}
+
+.success p:last-child {
+  word-break: break-all;
+}
+
+/* ファイル一覧テーブル */
+.files-table-container {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.files-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.files-table th,
+.files-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.files-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.files-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.files-table td:last-child {
+  white-space: nowrap;
+}
+
+/* ファイル一覧コントロール */
+.files-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  flex: 1;
+  max-width: 300px;
+  margin-left: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* ソート可能なテーブルヘッダー */
+.sortable {
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.sortable:hover {
+  background-color: #f0f0f0;
+}
+
+.sort-indicator {
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+.sorted-asc {
+  background-color: #e8f5e9;
+}
+
+.sorted-desc {
+  background-color: #e8f5e9;
+}
+
+/* URL取得ボタン */
+.btn-url {
+  background-color: #ff9800;
+}
+
+.btn-url:hover {
+  background-color: #f57c00;
+}
+
+/* モーダル */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.url-container {
+  display: flex;
+  margin: 15px 0;
+}
+
+.url-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-copy {
+  border-radius: 0 4px 4px 0;
+  margin: 0;
+}
+
+.modal-footer {
+  padding: 15px 20px;
+  border-top: 1px solid #ddd;
+  text-align: right;
+}

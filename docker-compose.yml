@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      args:
+        - BUILDKIT_INLINE_CACHE=0
+      cache_from: []
+    container_name: s3-uploader-backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    volumes:
+      - backend_temp:/app/temp
+    ports:
+      - "3001:3001"
+    networks:
+      - s3-uploader-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - BUILDKIT_INLINE_CACHE=0
+      cache_from: []
+    container_name: s3-uploader-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+    networks:
+      - s3-uploader-network
+
+networks:
+  s3-uploader-network:
+    driver: bridge
+
+volumes:
+  backend_temp:
